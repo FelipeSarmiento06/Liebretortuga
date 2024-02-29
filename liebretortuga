@@ -1,0 +1,42 @@
+package liebretortuga;
+
+public class Liebretortuga {
+
+    public static void main(String[] args) {
+       
+        int numeroPasos = 50; 
+        int posicionLiebre = 0;
+        int posicionTortuga = 0;
+
+      
+        while (posicionLiebre < numeroPasos && posicionTortuga < numeroPasos) {
+           
+        int pasoLiebre = avanceLiebre();
+            posicionLiebre += pasoLiebre; 
+        int pasoTortuga = avanceTortuga();
+            posicionTortuga += pasoTortuga;
+
+    
+            System.out.println("Liebre: " + posicionLiebre + ", Tortuga: " + posicionTortuga);
+        }
+
+        if (posicionLiebre >= numeroPasos && posicionTortuga >= numeroPasos) {
+            System.out.println("¡Empate!");
+        } else if (posicionLiebre >= numeroPasos) {
+            System.out.println("¡La liebre gana!");
+        } else {
+            System.out.println("¡La tortuga gana!");
+        }
+    }
+
+    private static int avanceLiebre() {
+        int[] pasosLiebre = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int indice = (int) (Math.random() * pasosLiebre.length);
+        return pasosLiebre[indice];
+    }
+
+  
+    private static int avanceTortuga() {
+        return 5; 
+    }
+}
